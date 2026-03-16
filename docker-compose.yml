@@ -1,7 +1,7 @@
 services:
   mirofish:
     image: ghcr.io/666ghj/mirofish:latest
-    # 加速镜像（如拉取缓慢可替换上方地址）
+    # Imagem acelerada (substitua o endereco acima caso o download esteja lento)
     # image: ghcr.nju.edu.cn/666ghj/mirofish:latest
     container_name: mirofish
     env_file:

@@ -3,11 +3,11 @@
 </template>
 
 <script setup>
-// 使用 Vue Router 来管理页面
+// Usar Vue Router para gerenciar p\u00e1ginas
 </script>
 
 <style>
-/* 全局样式重置 */
+/* Reset global de estilos */
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@
   background-color: #ffffff;
 }
 
-/* 滚动条样式 */
+/* Estilo da barra de rolagem */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -40,7 +40,7 @@
   background: #333333;
 }
 
-/* 全局按钮样式 */
+/* Estilo global de bot\u00f5es */
 button {
   font-family: inherit;
 }

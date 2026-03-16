@@ -1,6 +1,6 @@
 """
-项目上下文管理
-用于在服务端持久化项目状态，避免前端在接口间传递大量数据
+Gerenciamento de contexto de projeto
+Usado para persistir o estado do projeto no servidor, evitando que o frontend transfira grandes volumes de dados entre interfaces
 """
 
 import os
@@ -15,45 +15,45 @@ from ..config import Config
 
 
 class ProjectStatus(str, Enum):
-    """项目状态"""
-    CREATED = "created"              # 刚创建，文件已上传
-    ONTOLOGY_GENERATED = "ontology_generated"  # 本体已生成
-    GRAPH_BUILDING = "graph_building"    # 图谱构建中
-    GRAPH_COMPLETED = "graph_completed"  # 图谱构建完成
-    FAILED = "failed"                # 失败
+    """Status do projeto"""
+    CREATED = "created"              # Recém-criado, arquivos já enviados
+    ONTOLOGY_GENERATED = "ontology_generated"  # Ontologia já gerada
+    GRAPH_BUILDING = "graph_building"    # Grafo em construção
+    GRAPH_COMPLETED = "graph_completed"  # Construção do grafo concluída
+    FAILED = "failed"                # Falhou
 
 
 @dataclass
 class Project:
-    """项目数据模型"""
+    """Modelo de dados do projeto"""
     project_id: str
     name: str
     status: ProjectStatus
     created_at: str
     updated_at: str
     
-    # 文件信息
+    # Informações de arquivos
     files: List[Dict[str, str]] = field(default_factory=list)  # [{filename, path, size}]
     total_text_length: int = 0
     
-    # 本体信息（接口1生成后填充）
+    # Informações de ontologia (preenchido após geração pela interface 1)
     ontology: Optional[Dict[str, Any]] = None
     analysis_summary: Optional[str] = None
     
-    # 图谱信息（接口2完成后填充）
+    # Informações do grafo (preenchido após conclusão pela interface 2)
     graph_id: Optional[str] = None
     graph_build_task_id: Optional[str] = None
     
-    # 配置
+    # Configuração
     simulation_requirement: Optional[str] = None
     chunk_size: int = 500
     chunk_overlap: int = 50
     
-    # 错误信息
+    # Informações de erro
     error: Optional[str] = None
     
     def to_dict(self) -> Dict[str, Any]:
-        """转换为字典"""
+        """Converter para dicionário"""
         return {
             "project_id": self.project_id,
             "name": self.name,
@@ -74,7 +74,7 @@ class Project:
     
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Project':
-        """从字典创建"""
+        """Criar a partir de dicionário"""
         status = data.get('status', 'created')
         if isinstance(status, str):
             status = ProjectStatus(status)
@@ -99,46 +99,46 @@ class Project:
 
 
 class ProjectManager:
-    """项目管理器 - 负责项目的持久化存储和检索"""
-    
-    # 项目存储根目录
+    """Gerenciador de projetos - responsável pelo armazenamento persistente e recuperação de projetos"""
+
+    # Diretório raiz de armazenamento de projetos
     PROJECTS_DIR = os.path.join(Config.UPLOAD_FOLDER, 'projects')
     
     @classmethod
     def _ensure_projects_dir(cls):
-        """确保项目目录存在"""
+        """Garantir que o diretório de projetos exista"""
         os.makedirs(cls.PROJECTS_DIR, exist_ok=True)
     
     @classmethod
     def _get_project_dir(cls, project_id: str) -> str:
-        """获取项目目录路径"""
+        """Obter caminho do diretório do projeto"""
         return os.path.join(cls.PROJECTS_DIR, project_id)
     
     @classmethod
     def _get_project_meta_path(cls, project_id: str) -> str:
-        """获取项目元数据文件路径"""
+        """Obter caminho do arquivo de metadados do projeto"""
         return os.path.join(cls._get_project_dir(project_id), 'project.json')
     
     @classmethod
     def _get_project_files_dir(cls, project_id: str) -> str:
-        """获取项目文件存储目录"""
+        """Obter diretório de armazenamento de arquivos do projeto"""
         return os.path.join(cls._get_project_dir(project_id), 'files')
     
     @classmethod
     def _get_project_text_path(cls, project_id: str) -> str:
-        """获取项目提取文本存储路径"""
+        """Obter caminho de armazenamento do texto extraído do projeto"""
         return os.path.join(cls._get_project_dir(project_id), 'extracted_text.txt')
     
     @classmethod
     def create_project(cls, name: str = "Unnamed Project") -> Project:
         """
-        创建新项目
-        
+        Criar novo projeto
+
         Args:
-            name: 项目名称
-            
+            name: Nome do projeto
+
         Returns:
-            新创建的Project对象
+            Objeto Project recém-criado
         """
         cls._ensure_projects_dir()
         
@@ -153,20 +153,20 @@ class ProjectManager:
             updated_at=now
         )
         
-        # 创建项目目录结构
+        # Criar estrutura de diretórios do projeto
         project_dir = cls._get_project_dir(project_id)
         files_dir = cls._get_project_files_dir(project_id)
         os.makedirs(project_dir, exist_ok=True)
         os.makedirs(files_dir, exist_ok=True)
         
-        # 保存项目元数据
+        # Salvar metadados do projeto
         cls.save_project(project)
         
         return project
     
     @classmethod
     def save_project(cls, project: Project) -> None:
-        """保存项目元数据"""
+        """Salvar metadados do projeto"""
         project.updated_at = datetime.now().isoformat()
         meta_path = cls._get_project_meta_path(project.project_id)
         
@@ -176,13 +176,13 @@ class ProjectManager:
     @classmethod
     def get_project(cls, project_id: str) -> Optional[Project]:
         """
-        获取项目
-        
+        Obter projeto
+
         Args:
-            project_id: 项目ID
-            
+            project_id: ID do projeto
+
         Returns:
-            Project对象，如果不存在返回None
+            Objeto Project, retorna None se não existir
         """
         meta_path = cls._get_project_meta_path(project_id)
         
@@ -197,13 +197,13 @@ class ProjectManager:
     @classmethod
     def list_projects(cls, limit: int = 50) -> List[Project]:
         """
-        列出所有项目
-        
+        Listar todos os projetos
+
         Args:
-            limit: 返回数量限制
-            
+            limit: Limite de quantidade de retorno
+
         Returns:
-            项目列表，按创建时间倒序
+            Lista de projetos, ordenada por data de criação decrescente
         """
         cls._ensure_projects_dir()
         
@@ -213,7 +213,7 @@ class ProjectManager:
             if project:
                 projects.append(project)
         
-        # 按创建时间倒序排序
+        # Ordenar por data de criação decrescente
         projects.sort(key=lambda p: p.created_at, reverse=True)
         
         return projects[:limit]
@@ -221,13 +221,13 @@ class ProjectManager:
     @classmethod
     def delete_project(cls, project_id: str) -> bool:
         """
-        删除项目及其所有文件
-        
+        Excluir projeto e todos os seus arquivos
+
         Args:
-            project_id: 项目ID
-            
+            project_id: ID do projeto
+
         Returns:
-            是否删除成功
+            Se a exclusão foi bem-sucedida
         """
         project_dir = cls._get_project_dir(project_id)
         
@@ -240,28 +240,28 @@ class ProjectManager:
     @classmethod
     def save_file_to_project(cls, project_id: str, file_storage, original_filename: str) -> Dict[str, str]:
         """
-        保存上传的文件到项目目录
-        
+        Salvar arquivo enviado no diretório do projeto
+
         Args:
-            project_id: 项目ID
-            file_storage: Flask的FileStorage对象
-            original_filename: 原始文件名
-            
+            project_id: ID do projeto
+            file_storage: Objeto FileStorage do Flask
+            original_filename: Nome original do arquivo
+
         Returns:
-            文件信息字典 {filename, path, size}
+            Dicionário de informações do arquivo {filename, path, size}
         """
         files_dir = cls._get_project_files_dir(project_id)
         os.makedirs(files_dir, exist_ok=True)
         
-        # 生成安全的文件名
+        # Gerar nome de arquivo seguro
         ext = os.path.splitext(original_filename)[1].lower()
         safe_filename = f"{uuid.uuid4().hex[:8]}{ext}"
         file_path = os.path.join(files_dir, safe_filename)
         
-        # 保存文件
+        # Salvar arquivo
         file_storage.save(file_path)
         
-        # 获取文件大小
+        # Obter tamanho do arquivo
         file_size = os.path.getsize(file_path)
         
         return {
@@ -273,14 +273,14 @@ class ProjectManager:
     
     @classmethod
     def save_extracted_text(cls, project_id: str, text: str) -> None:
-        """保存提取的文本"""
+        """Salvar texto extraído"""
         text_path = cls._get_project_text_path(project_id)
         with open(text_path, 'w', encoding='utf-8') as f:
             f.write(text)
     
     @classmethod
     def get_extracted_text(cls, project_id: str) -> Optional[str]:
-        """获取提取的文本"""
+        """Obter texto extraído"""
         text_path = cls._get_project_text_path(project_id)
         
         if not os.path.exists(text_path):
@@ -291,7 +291,7 @@ class ProjectManager:
     
     @classmethod
     def get_project_files(cls, project_id: str) -> List[str]:
-        """获取项目的所有文件路径"""
+        """Obter todos os caminhos de arquivos do projeto"""
         files_dir = cls._get_project_files_dir(project_id)
         
         if not os.path.exists(files_dir):

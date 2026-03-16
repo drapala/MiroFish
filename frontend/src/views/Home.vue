@@ -1,35 +1,35 @@
 <template>
   <div class="home-container">
-    <!-- 顶部导航栏 -->
-    <nav class="navbar">
-      <div class="nav-brand">MIROFISH</div>
-      <div class="nav-links">
-        <a href="https://github.com/666ghj/MiroFish" target="_blank" class="github-link">
-          访问我们的Github主页 <span class="arrow">↗</span>
+    <!-- Barra de navega\u00e7\u00e3o superior -->
+    <nav class=”navbar”>
+      <div class=”nav-brand”>MIROFISH</div>
+      <div class=”nav-links”>
+        <a href=”https://github.com/666ghj/MiroFish” target=”_blank” class=”github-link”>
+          Visite nosso Github <span class=”arrow”>↗</span>
         </a>
       </div>
     </nav>
 
-    <div class="main-content">
-      <!-- 上半部分：Hero 区域 -->
-      <section class="hero-section">
-        <div class="hero-left">
-          <div class="tag-row">
-            <span class="orange-tag">简洁通用的群体智能引擎</span>
-            <span class="version-text">/ v0.1-预览版</span>
+    <div class=”main-content”>
+      <!-- Parte superior: \u00c1rea Hero -->
+      <section class=”hero-section”>
+        <div class=”hero-left”>
+          <div class=”tag-row”>
+            <span class=”orange-tag”>Motor de Intelig\u00eancia Coletiva Simples e Universal</span>
+            <span class=”version-text”>/ v0.1-pr\u00e9via</span>
           </div>
-          
-          <h1 class="main-title">
-            上传任意报告<br>
-            <span class="gradient-text">即刻推演未来</span>
+
+          <h1 class=”main-title”>
+            Envie qualquer relat\u00f3rio<br>
+            <span class=”gradient-text”>Simule o futuro agora</span>
           </h1>
-          
-          <div class="hero-desc">
+
+          <div class=”hero-desc”>
             <p>
-              即使只有一段文字，<span class="highlight-bold">MiroFish</span> 也能基于其中的现实种子，全自动生成与之对应的至多<span class="highlight-orange">百万级Agent</span>构成的平行世界。通过上帝视角注入变量，在复杂的群体交互中寻找动态环境下的<span class="highlight-code">“局部最优解”</span>
+              Mesmo com apenas um trecho de texto, <span class=”highlight-bold”>MiroFish</span> pode gerar automaticamente um mundo paralelo com at\u00e9 <span class=”highlight-orange”>milh\u00f5es de Agents</span> baseado nas sementes reais contidas nele. Injete vari\u00e1veis com vis\u00e3o privilegiada e encontre o <span class=”highlight-code”>”melhor local”</span> em intera\u00e7\u00f5es coletivas complexas em ambientes din\u00e2micos
             </p>
-            <p class="slogan-text">
-              让未来在 Agent 群中预演，让决策在百战后胜出<span class="blinking-cursor">_</span>
+            <p class=”slogan-text”>
+              Deixe o futuro se ensaiar entre Agents, deixe as decis\u00f5es vencerem ap\u00f3s mil batalhas<span class=”blinking-cursor”>_</span>
             </p>
           </div>
            
@@ -37,7 +37,7 @@
         </div>
         
         <div class="hero-right">
-          <!-- Logo 区域 -->
+          <!-- Área do Logo -->
           <div class="logo-container">
             <img src="../assets/logo/MiroFish_logo_left.jpeg" alt="MiroFish Logo" class="hero-logo" />
           </div>
@@ -48,84 +48,84 @@
         </div>
       </section>
 
-      <!-- 下半部分：双栏布局 -->
+      <!-- Parte inferior: Layout de duas colunas -->
       <section class="dashboard-section">
-        <!-- 左栏：状态与步骤 -->
+        <!-- Coluna esquerda: Status e etapas -->
         <div class="left-panel">
           <div class="panel-header">
-            <span class="status-dot">■</span> 系统状态
+            <span class="status-dot">■</span> Status do Sistema
           </div>
-          
-          <h2 class="section-title">准备就绪</h2>
+
+          <h2 class="section-title">Pronto</h2>
           <p class="section-desc">
-            预测引擎待命中，可上传多份非结构化数据以初始化模拟序列
+            Motor de predi\u00e7\u00e3o em espera. Envie m\u00faltiplos dados n\u00e3o estruturados para inicializar a sequ\u00eancia de simula\u00e7\u00e3o
           </p>
-          
-          <!-- 数据指标卡片 -->
+
+          <!-- Cart\u00f5es de m\u00e9tricas -->
           <div class="metrics-row">
             <div class="metric-card">
-              <div class="metric-value">低成本</div>
-              <div class="metric-label">常规模拟平均5$/次</div>
+              <div class="metric-value">Baixo Custo</div>
+              <div class="metric-label">Simula\u00e7\u00e3o padr\u00e3o m\u00e9dia 5$/vez</div>
             </div>
             <div class="metric-card">
-              <div class="metric-value">高可用</div>
-              <div class="metric-label">最多百万级Agent模拟</div>
+              <div class="metric-value">Alta Disponibilidade</div>
+              <div class="metric-label">At\u00e9 milh\u00f5es de Agents em simula\u00e7\u00e3o</div>
             </div>
           </div>
 
-          <!-- 项目模拟步骤介绍 (新增区域) -->
+          <!-- Introdu\u00e7\u00e3o das etapas de simula\u00e7\u00e3o -->
           <div class="steps-container">
             <div class="steps-header">
-               <span class="diamond-icon">◇</span> 工作流序列
+               <span class="diamond-icon">◇</span> Sequ\u00eancia do Fluxo de Trabalho
             </div>
             <div class="workflow-list">
               <div class="workflow-item">
                 <span class="step-num">01</span>
                 <div class="step-info">
-                  <div class="step-title">图谱构建</div>
-                  <div class="step-desc">现实种子提取 & 个体与群体记忆注入 & GraphRAG构建</div>
+                  <div class="step-title">Constru\u00e7\u00e3o do Grafo</div>
+                  <div class="step-desc">Extra\u00e7\u00e3o de sementes reais & Inje\u00e7\u00e3o de mem\u00f3ria individual e coletiva & Constru\u00e7\u00e3o GraphRAG</div>
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">02</span>
                 <div class="step-info">
-                  <div class="step-title">环境搭建</div>
-                  <div class="step-desc">实体关系抽取 & 人设生成 & 环境配置Agent注入仿真参数</div>
+                  <div class="step-title">Configura\u00e7\u00e3o do Ambiente</div>
+                  <div class="step-desc">Extra\u00e7\u00e3o de rela\u00e7\u00f5es entre entidades & Gera\u00e7\u00e3o de personas & Inje\u00e7\u00e3o de par\u00e2metros de simula\u00e7\u00e3o</div>
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">03</span>
                 <div class="step-info">
-                  <div class="step-title">开始模拟</div>
-                  <div class="step-desc">双平台并行模拟 & 自动解析预测需求 & 动态更新时序记忆</div>
+                  <div class="step-title">Iniciar Simula\u00e7\u00e3o</div>
+                  <div class="step-desc">Simula\u00e7\u00e3o paralela em duas plataformas & An\u00e1lise autom\u00e1tica de demandas de predi\u00e7\u00e3o & Atualiza\u00e7\u00e3o din\u00e2mica de mem\u00f3ria temporal</div>
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">04</span>
                 <div class="step-info">
-                  <div class="step-title">报告生成</div>
-                  <div class="step-desc">ReportAgent拥有丰富的工具集与模拟后环境进行深度交互</div>
+                  <div class="step-title">Gera\u00e7\u00e3o de Relat\u00f3rio</div>
+                  <div class="step-desc">ReportAgent possui um rico conjunto de ferramentas para intera\u00e7\u00e3o profunda com o ambiente p\u00f3s-simula\u00e7\u00e3o</div>
                 </div>
               </div>
               <div class="workflow-item">
                 <span class="step-num">05</span>
                 <div class="step-info">
-                  <div class="step-title">深度互动</div>
-                  <div class="step-desc">与模拟世界中的任意一位进行对话 & 与ReportAgent进行对话</div>
+                  <div class="step-title">Intera\u00e7\u00e3o Profunda</div>
+                  <div class="step-desc">Converse com qualquer indiv\u00edduo do mundo simulado & Converse com o ReportAgent</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 右栏：交互控制台 -->
+        <!-- Coluna direita: Console interativo -->
         <div class="right-panel">
           <div class="console-box">
-            <!-- 上传区域 -->
+            <!-- \u00c1rea de upload -->
             <div class="console-section">
               <div class="console-header">
-                <span class="console-label">01 / 现实种子</span>
-                <span class="console-meta">支持格式: PDF, MD, TXT</span>
+                <span class="console-label">01 / Sementes Reais</span>
+                <span class="console-meta">Formatos suportados: PDF, MD, TXT</span>
               </div>
               
               <div 
@@ -148,8 +148,8 @@
                 
                 <div v-if="files.length === 0" class="upload-placeholder">
                   <div class="upload-icon">↑</div>
-                  <div class="upload-title">拖拽文件上传</div>
-                  <div class="upload-hint">或点击浏览文件系统</div>
+                  <div class="upload-title">Arraste arquivos para enviar</div>
+                  <div class="upload-hint">ou clique para navegar no sistema de arquivos</div>
                 </div>
                 
                 <div v-else class="file-list">
@@ -162,37 +162,37 @@
               </div>
             </div>
 
-            <!-- 分割线 -->
+            <!-- Linha divis\u00f3ria -->
             <div class="console-divider">
-              <span>输入参数</span>
+              <span>Par\u00e2metros de Entrada</span>
             </div>
 
-            <!-- 输入区域 -->
+            <!-- \u00c1rea de entrada -->
             <div class="console-section">
               <div class="console-header">
-                <span class="console-label">>_ 02 / 模拟提示词</span>
+                <span class="console-label">>_ 02 / Prompt de Simula\u00e7\u00e3o</span>
               </div>
               <div class="input-wrapper">
                 <textarea
                   v-model="formData.simulationRequirement"
                   class="code-input"
-                  placeholder="// 用自然语言输入模拟或预测需求（例.武大若发布撤销肖某处分的公告，会引发什么舆情走向）"
+                  placeholder="// Insira em linguagem natural a demanda de simula\u00e7\u00e3o ou predi\u00e7\u00e3o (ex: Se a universidade publicar um comunicado revogando a puni\u00e7\u00e3o, qual ser\u00e1 a tend\u00eancia da opini\u00e3o p\u00fablica?)"
                   rows="6"
                   :disabled="loading"
                 ></textarea>
-                <div class="model-badge">引擎: MiroFish-V1.0</div>
+                <div class="model-badge">Motor: MiroFish-V1.0</div>
               </div>
             </div>
 
-            <!-- 启动按钮 -->
+            <!-- Bot\u00e3o de iniciar -->
             <div class="console-section btn-section">
-              <button 
+              <button
                 class="start-engine-btn"
                 @click="startSimulation"
                 :disabled="!canSubmit || loading"
               >
-                <span v-if="!loading">启动引擎</span>
-                <span v-else>初始化中...</span>
+                <span v-if="!loading">Iniciar Motor</span>
+                <span v-else>Inicializando...</span>
                 <span class="btn-arrow">→</span>
               </button>
             </div>
@@ -200,7 +200,7 @@
         </div>
       </section>
 
-      <!-- 历史项目数据库 -->
+      <!-- Banco de dados de projetos hist\u00f3ricos -->
       <HistoryDatabase />
     </div>
   </div>
@@ -213,41 +213,41 @@ import HistoryDatabase from '../components/HistoryDatabase.vue'
 
 const router = useRouter()
 
-// 表单数据
+// Dados do formul\u00e1rio
 const formData = ref({
   simulationRequirement: ''
 })
 
-// 文件列表
+// Lista de arquivos
 const files = ref([])
 
-// 状态
+// Estado
 const loading = ref(false)
 const error = ref('')
 const isDragOver = ref(false)
 
-// 文件输入引用
+// Refer\u00eancia do input de arquivo
 const fileInput = ref(null)
 
-// 计算属性:是否可以提交
+// Computed: pode enviar
 const canSubmit = computed(() => {
   return formData.value.simulationRequirement.trim() !== '' && files.value.length > 0
 })
 
-// 触发文件选择
+// Acionar sele\u00e7\u00e3o de arquivo
 const triggerFileInput = () => {
   if (!loading.value) {
     fileInput.value?.click()
   }
 }
 
-// 处理文件选择
+// Processar sele\u00e7\u00e3o de arquivo
 const handleFileSelect = (event) => {
   const selectedFiles = Array.from(event.target.files)
   addFiles(selectedFiles)
 }
 
-// 处理拖拽相关
+// Processar arrastar e soltar
 const handleDragOver = (e) => {
   if (!loading.value) {
     isDragOver.value = true
@@ -266,7 +266,7 @@ const handleDrop = (e) => {
   addFiles(droppedFiles)
 }
 
-// 添加文件
+// Adicionar arquivos
 const addFiles = (newFiles) => {
   const validFiles = newFiles.filter(file => {
     const ext = file.name.split('.').pop().toLowerCase()
@@ -275,12 +275,12 @@ const addFiles = (newFiles) => {
   files.value.push(...validFiles)
 }
 
-// 移除文件
+// Remover arquivo
 const removeFile = (index) => {
   files.value.splice(index, 1)
 }
 
-// 滚动到底部
+// Rolar para o final
 const scrollToBottom = () => {
   window.scrollTo({
     top: document.body.scrollHeight,
@@ -288,15 +288,15 @@ const scrollToBottom = () => {
   })
 }
 
-// 开始模拟 - 立即跳转，API调用在Process页面进行
+// Iniciar simula\u00e7\u00e3o - redireciona imediatamente, chamada API na p\u00e1gina Process
 const startSimulation = () => {
   if (!canSubmit.value || loading.value) return
   
-  // 存储待上传的数据
+  // Armazenar dados pendentes de upload
   import('../store/pendingUpload.js').then(({ setPendingUpload }) => {
     setPendingUpload(files.value, formData.value.simulationRequirement)
     
-    // 立即跳转到Process页面（使用特殊标识表示新建项目）
+    // Redirecionar imediatamente para a p\u00e1gina Process (usando identificador especial para novo projeto)
     router.push({
       name: 'Process',
       params: { projectId: 'new' }
@@ -306,7 +306,7 @@ const startSimulation = () => {
 </script>
 
 <style scoped>
-/* 全局变量与重置 */
+/* Variáveis globais e reset */
 :root {
   --black: #000000;
   --white: #FFFFFF;
@@ -315,8 +315,8 @@ const startSimulation = () => {
   --gray-text: #666666;
   --border: #E5E5E5;
   /* 
-    使用 Space Grotesk 作为主要标题字体，JetBrains Mono 作为代码/标签字体
-    确保已在 index.html 引入这些 Google Fonts 
+    Usar Space Grotesk como fonte principal de títulos, JetBrains Mono como fonte de código/rótulos
+    Certifique-se de importar essas Google Fonts no index.html 
   */
   --font-mono: 'JetBrains Mono', monospace;
   --font-sans: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
@@ -330,7 +330,7 @@ const startSimulation = () => {
   color: var(--black);
 }
 
-/* 顶部导航 */
+/* Navegação superior */
 .navbar {
   height: 60px;
   background: var(--black);
@@ -373,14 +373,14 @@ const startSimulation = () => {
   font-family: sans-serif;
 }
 
-/* 主要内容区 */
+/* Área de conteúdo principal */
 .main-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 60px 40px;
 }
 
-/* Hero 区域 */
+/* Área Hero */
 .hero-section {
   display: flex;
   justify-content: space-between;
@@ -511,7 +511,7 @@ const startSimulation = () => {
 }
 
 .hero-logo {
-  max-width: 500px; /* 调整logo大小 */
+  max-width: 500px; /* Ajustar tamanho do logo */
   width: 100%;
 }
 
@@ -533,7 +533,7 @@ const startSimulation = () => {
   border-color: var(--orange);
 }
 
-/* Dashboard 双栏布局 */
+/* Layout de duas colunas Dashboard */
 .dashboard-section {
   display: flex;
   gap: 60px;
@@ -548,7 +548,7 @@ const startSimulation = () => {
   flex-direction: column;
 }
 
-/* 左侧面板 */
+/* Painel esquerdo */
 .left-panel {
   flex: 0.8;
 }
@@ -604,7 +604,7 @@ const startSimulation = () => {
   color: #999;
 }
 
-/* 项目模拟步骤介绍 */
+/* Introdução das etapas de simulação */
 .steps-container {
   border: 1px solid var(--border);
   padding: 30px;
@@ -660,14 +660,14 @@ const startSimulation = () => {
   color: var(--gray-text);
 }
 
-/* 右侧交互控制台 */
+/* Console interativo direito */
 .right-panel {
   flex: 1.2;
 }
 
 .console-box {
-  border: 1px solid #CCC; /* 外部实线 */
-  padding: 8px; /* 内边距形成双重边框感 */
+  border: 1px solid #CCC; /* Borda sólida externa */
+  padding: 8px; /* Padding para efeito de borda dupla */
 }
 
 .console-section {
@@ -835,7 +835,7 @@ const startSimulation = () => {
   overflow: hidden;
 }
 
-/* 可点击状态（非禁用） */
+/* Estado clicável (não desabilitado) */
 .start-engine-btn:not(:disabled) {
   background: var(--black);
   border: 1px solid var(--black);
@@ -860,14 +860,14 @@ const startSimulation = () => {
   border: 1px solid #E5E5E5;
 }
 
-/* 引导动画：微妙的边框脉冲 */
+/* Animação guia: pulso sutil na borda */
 @keyframes pulse-border {
   0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); }
   70% { box-shadow: 0 0 0 6px rgba(0, 0, 0, 0); }
   100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
 }
 
-/* 响应式适配 */
+/* Adaptação responsiva */
 @media (max-width: 1024px) {
   .dashboard-section {
     flex-direction: column;
